@@ -21,16 +21,41 @@ const Projects: React.FC = () => (
                   <p className="font-mono text-[11px] text-fog">
                     {project.client} · {project.period}
                   </p>
-                  <h3 className="mt-1 text-xl font-semibold">{project.name}</h3>
+                  <h3 className="mt-1 text-xl font-semibold">
+                    {project.url ? (
+                      <a
+                        href={project.url}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="transition-colors hover:text-phosphor"
+                      >
+                        {project.name}
+                      </a>
+                    ) : (
+                      project.name
+                    )}
+                  </h3>
                   <p className="mt-0.5 font-mono text-xs text-phosphor-dim">{project.role}</p>
                 </div>
-                <ArrowUpRight className="h-5 w-5 shrink-0 text-fog/50" />
+                {project.url ? (
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={`Open ${project.name}`}
+                    className="shrink-0 text-phosphor transition-transform hover:scale-110"
+                  >
+                    <ArrowUpRight className="h-5 w-5" />
+                  </a>
+                ) : (
+                  <ArrowUpRight className="h-5 w-5 shrink-0 text-fog/50" />
+                )}
               </div>
               <p className="mt-4 text-sm leading-relaxed text-fog">{project.description}</p>
               <p className="mt-4 border-l-2 border-phosphor-dim/60 pl-3 font-mono text-xs text-paper">
                 {project.impact}
               </p>
-              <div className="mt-5 flex flex-wrap gap-2 pt-1">
+              <div className="mt-5 flex flex-wrap items-center gap-2 pt-1">
                 {project.stack.map((tech) => (
                   <span
                     key={tech}
@@ -39,6 +64,16 @@ const Projects: React.FC = () => (
                     {tech}
                   </span>
                 ))}
+                {project.url && (
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="ml-auto font-mono text-[11px] text-phosphor underline-offset-4 hover:underline"
+                  >
+                    play it live ↗
+                  </a>
+                )}
               </div>
             </article>
           </Reveal>

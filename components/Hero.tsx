@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { profile } from '../data/profile';
 
-const ROTATING = ['AI systems', 'LLM products', 'cloud platforms', 'great software'];
+const ROTATING = ['AI-powered systems', 'agentic workflows', 'clean architecture', 'delightful UX'];
 
 /** Lightweight typewriter for the rotating hero words. */
 function useTypewriter(words: string[]): string {

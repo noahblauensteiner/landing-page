@@ -38,7 +38,7 @@ To test the production setup locally you can also use the Netlify CLI:
 
 ## Personalise
 
-1. Open `data/profile.ts` and replace the placeholder reference projects, links, and
-   location with your own.
-2. That's it — the hero, sections, built-in terminal commands, and the AI's knowledge all
-   update together.
+`data/profile.ts` holds the full profile (derived from the CV): bio, passions, reference
+projects, skills, education, certifications, and links. Edit it and the hero, sections,
+built-in terminal commands, and the AI's knowledge all update together. Keep it in sync
+with your CV.

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sparkles, Code2, Cloud, Users } from 'lucide-react';
+import { Sparkles, Code2, Cloud, Users, Volleyball } from 'lucide-react';
 import { profile } from '../data/profile';
 import Reveal from './Reveal';
 
@@ -8,6 +8,7 @@ const ICONS: Record<string, React.ReactNode> = {
   code: <Code2 className="h-6 w-6" />,
   cloud: <Cloud className="h-6 w-6" />,
   users: <Users className="h-6 w-6" />,
+  volleyball: <Volleyball className="h-6 w-6" />,
 };
 
 const Passions: React.FC = () => (
