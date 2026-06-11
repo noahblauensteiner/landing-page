@@ -4,7 +4,7 @@ import { profile } from '../data/profile';
 import Reveal from './Reveal';
 
 const Workshops: React.FC = () => (
-  <section id="workshops" className="mx-auto max-w-6xl px-4 py-24 sm:px-6">
+  <section id="workshops" className="mx-auto max-w-6xl scroll-mt-16 px-4 py-24 sm:px-6">
     <Reveal>
       <p className="font-mono text-xs text-phosphor-dim">// workshops &amp; knowledge sharing</p>
       <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">

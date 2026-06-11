@@ -4,7 +4,7 @@ import { profile } from '../data/profile';
 import Reveal from './Reveal';
 
 const Footer: React.FC = () => (
-  <footer id="contact" className="border-t border-edge/60 bg-panel/40">
+  <footer id="contact" className="scroll-mt-16 border-t border-edge/60 bg-panel/40">
     <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
       <Reveal>
         <p className="font-mono text-xs text-phosphor-dim">// contact</p>
