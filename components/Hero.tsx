@@ -38,7 +38,7 @@ const Hero: React.FC = () => {
   return (
     <section id="top" className="relative overflow-hidden">
       <div className="bg-grid absolute inset-0" aria-hidden="true" />
-      <div className="relative mx-auto flex min-h-[92vh] max-w-6xl flex-col justify-center px-4 pt-24 sm:px-6">
+      <div className="relative mx-auto flex min-h-[82vh] max-w-6xl flex-col justify-center px-4 pt-16 sm:px-6">
         {/* Negative vertical margins keep the row at text height, so the
             avatar floats on the free space to the right without pushing
             the heading down. */}
