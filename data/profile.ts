@@ -101,9 +101,9 @@ than he found them.`,
       period: '2026',
       role: 'Everything',
       description:
-        'An AI-infused portfolio with an interactive terminal where visitors interrogate an LLM about my work — the assistant streams answers grounded in a structured profile, served from a serverless edge function.',
+        'An AI-infused portfolio with an interactive terminal where visitors interrogate an LLM about my work — the assistant streams answers grounded in a structured profile, served from a serverless function on Netlify.',
       impact: 'You are looking at it. Try the terminal below.',
-      stack: ['React', 'TypeScript', 'Claude API', 'Vite', 'Edge Functions'],
+      stack: ['React', 'TypeScript', 'Claude API', 'Vite', 'Netlify Functions'],
     },
   ] as Project[],
 

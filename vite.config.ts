@@ -2,8 +2,9 @@ import path from 'path';
 import { defineConfig, loadEnv, type Plugin, type ViteDevServer } from 'vite';
 
 /**
- * Mounts api/chat.ts on the Vite dev server so the AI terminal works locally
- * with `npm run dev`. In production the same file runs as a Vercel Edge Function.
+ * Mounts netlify/functions/chat.ts on the Vite dev server so the AI terminal
+ * works locally with `npm run dev`. In production the same file runs as a
+ * Netlify Function at /api/chat.
  */
 function chatApiDevPlugin(): Plugin {
   return {
@@ -11,7 +12,7 @@ function chatApiDevPlugin(): Plugin {
     configureServer(server: ViteDevServer) {
       server.middlewares.use('/api/chat', async (req, res) => {
         try {
-          const mod = await server.ssrLoadModule('/api/chat.ts');
+          const mod = await server.ssrLoadModule('/netlify/functions/chat.ts');
           const handler = mod.default as (req: Request) => Promise<Response>;
 
           const chunks: Buffer[] = [];

@@ -1,14 +1,15 @@
 /**
  * Streaming chat endpoint for the portfolio terminal.
  *
- * Runs as a Vercel Edge Function in production and is mounted on the Vite dev
- * server via the plugin in vite.config.ts, so `npm run dev` works the same way.
- * The Anthropic API key stays server-side — it is never shipped to the browser.
+ * Runs as a Netlify Function in production (served at /api/chat via the
+ * `config.path` below) and is mounted on the Vite dev server via the plugin in
+ * vite.config.ts, so `npm run dev` works the same way. The Anthropic API key
+ * stays server-side — it is never shipped to the browser.
  */
 import Anthropic from '@anthropic-ai/sdk';
-import { profile } from '../data/profile';
+import { profile } from '../../data/profile';
 
-export const config = { runtime: 'edge' };
+export const config = { path: '/api/chat' };
 
 const MAX_HISTORY = 12;
 const MAX_MESSAGE_LENGTH = 2000;

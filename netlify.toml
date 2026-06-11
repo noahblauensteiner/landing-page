@@ -1,0 +1,9 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Functions live in netlify/functions (the default); chat.ts registers itself
+# at /api/chat via its exported config.path, so no redirects are needed.
