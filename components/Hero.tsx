@@ -39,6 +39,16 @@ const Hero: React.FC = () => {
     <section id="top" className="relative overflow-hidden">
       <div className="bg-grid absolute inset-0" aria-hidden="true" />
       <div className="relative mx-auto flex min-h-[92vh] max-w-6xl flex-col justify-center px-4 pt-24 sm:px-6">
+        <motion.img
+          src="/noah.jpg"
+          alt={profile.name}
+          width={72}
+          height={72}
+          initial={{ opacity: 0, scale: 0.92 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.05, duration: 0.7, ease: 'easeOut' }}
+          className="avatar mb-5 h-16 w-16 rounded-full ring-1 ring-phosphor-dim/40 shadow-[0_0_30px_rgba(0,255,156,0.12)] sm:h-[72px] sm:w-[72px]"
+        />
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}

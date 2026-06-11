@@ -11,18 +11,9 @@ const LINKS = [
 const Nav: React.FC = () => (
   <header className="fixed inset-x-0 top-0 z-50 border-b border-edge/60 bg-ink/80 backdrop-blur-md">
     <nav className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-3 py-2.5 sm:px-6 sm:py-3">
-      <a href="#top" className="flex shrink-0 items-center gap-2.5 font-mono text-sm text-phosphor">
-        <img
-          src="/noah.jpg"
-          alt={profile.name}
-          width={28}
-          height={28}
-          className="avatar h-7 w-7 rounded-full ring-1 ring-phosphor-dim/50"
-        />
-        <span className="hidden sm:inline">
-          ~/{profile.name.split(' ')[0].toLowerCase()}
-          <span className="cursor-blink">_</span>
-        </span>
+      <a href="#top" className="shrink-0 font-mono text-xs text-phosphor sm:text-sm">
+        ~/{profile.name.split(' ')[0].toLowerCase()}
+        <span className="cursor-blink">_</span>
       </a>
       <div className="flex min-w-0 items-center gap-3 sm:gap-6">
         <div className="flex gap-3 font-mono text-[11px] text-fog sm:gap-6 sm:text-xs">

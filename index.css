@@ -8,7 +8,7 @@ html {
   color: #0a0f0d;
 }
 
-/* Nav avatar — desaturated so it blends with the terminal palette,
+/* Hero avatar — desaturated so it blends with the terminal palette,
    full colour on hover */
 .avatar {
   filter: grayscale(45%) contrast(1.05) brightness(0.95);
