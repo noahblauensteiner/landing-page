@@ -2,50 +2,53 @@
 <html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Your Ideas, Made Real</title>
+    <title>Noah Blauensteiner — AI & Software Engineering</title>
+    <meta
+      name="description"
+      content="Portfolio of Noah Blauensteiner — AI & software engineering consultant. Explore reference projects or ask the built-in AI terminal anything."
+    />
+    <meta property="og:title" content="Noah Blauensteiner — AI & Software Engineering" />
+    <meta
+      property="og:description"
+      content="An AI-infused portfolio with an interactive terminal. Ask it anything about my work."
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%2300ff9c' font-family='monospace'>&gt;_</text></svg>"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
     <script>
       tailwind.config = {
-        darkMode: 'class',
         theme: {
           extend: {
             colors: {
-              'brand-dark-blue': '#003f5c',
-              'brand-purple': '#7a5195',
-              'brand-pink': '#ef5675',
-              'brand-orange': '#ffa600',
-              'brand-magenta': '#bc5090',
-              'brand-teal': '#20c997',
+              ink: '#0a0f0d',
+              panel: '#0e1512',
+              edge: '#1d2b24',
+              phosphor: '#00ff9c',
+              'phosphor-dim': '#0fae71',
+              amber: '#ffb454',
+              fog: '#9fb8ac',
+              paper: '#e8f5ee',
             },
             fontFamily: {
-              sans: ['Inter', 'sans-serif'],
+              display: ['"Space Grotesk"', 'sans-serif'],
+              mono: ['"JetBrains Mono"', 'monospace'],
             },
-          }
-        }
-      }
+          },
+        },
+      };
     </script>
-  <script type="importmap">
-{
-  "imports": {
-    "react/": "https://esm.sh/react@^19.1.1/",
-    "react": "https://esm.sh/react@^19.1.1",
-    "react-dom/": "https://esm.sh/react-dom@^19.1.1/",
-    "lucide-react": "https://esm.sh/lucide-react@^0.539.0",
-    "framer-motion": "https://esm.sh/framer-motion@^11.3.19",
-    "react-intersection-observer": "https://esm.sh/react-intersection-observer@^9.13.0",
-    "path": "https://esm.sh/path@^0.12.7",
-    "vite": "https://esm.sh/vite@^7.1.1"
-  }
-}
-</script>
-<link rel="stylesheet" href="/index.css">
-</head>
-  <body>
+    <link rel="stylesheet" href="/index.css" />
+  </head>
+  <body class="bg-ink text-paper font-display antialiased">
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
   </body>
