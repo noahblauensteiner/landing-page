@@ -38,15 +38,30 @@ const Hero: React.FC = () => {
   return (
     <section id="top" className="relative overflow-hidden">
       <div className="bg-grid absolute inset-0" aria-hidden="true" />
-      <div className="relative mx-auto flex min-h-[92vh] max-w-6xl flex-col justify-center px-4 pt-24 sm:px-6">
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.1, duration: 0.6 }}
-          className="mb-6 font-mono text-xs text-phosphor-dim sm:text-sm"
-        >
-          // {profile.title.toLowerCase()} @ {profile.company.toLowerCase()}
-        </motion.p>
+      <div className="relative mx-auto flex min-h-[82vh] max-w-6xl flex-col justify-center px-4 pt-16 sm:px-6">
+        {/* Negative vertical margins keep the row at text height, so the
+            avatar floats on the free space to the right without pushing
+            the heading down. */}
+        <div className="mb-6 flex items-center justify-between gap-4">
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.1, duration: 0.6 }}
+            className="font-mono text-xs text-phosphor-dim sm:text-sm"
+          >
+            // {profile.title.toLowerCase()} @ {profile.company.toLowerCase()}
+          </motion.p>
+          <motion.img
+            src="/noah.jpg"
+            alt={profile.name}
+            width={144}
+            height={144}
+            initial={{ opacity: 0, scale: 0.92 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.05, duration: 0.7, ease: 'easeOut' }}
+            className="avatar -my-12 h-24 w-24 shrink-0 rounded-full ring-1 ring-phosphor-dim/40 shadow-[0_0_50px_rgba(0,255,156,0.15)] sm:-my-[72px] sm:h-36 sm:w-36"
+          />
+        </div>
 
         <motion.h1
           initial={{ opacity: 0, y: 24 }}
@@ -96,7 +111,7 @@ const Hero: React.FC = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.1, duration: 1 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 font-mono text-[10px] uppercase tracking-[0.3em] text-fog/60"
+          className="pointer-events-none absolute bottom-8 left-1/2 -translate-x-1/2 font-mono text-[10px] uppercase tracking-[0.3em] text-fog/60"
         >
           scroll ↓
         </motion.div>

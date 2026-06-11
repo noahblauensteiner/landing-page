@@ -10,24 +10,26 @@ const LINKS = [
 
 const Nav: React.FC = () => (
   <header className="fixed inset-x-0 top-0 z-50 border-b border-edge/60 bg-ink/80 backdrop-blur-md">
-    <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
-      <a href="#top" className="font-mono text-sm text-phosphor">
+    <nav className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-3 py-2.5 sm:px-6 sm:py-3">
+      <a href="#top" className="shrink-0 font-mono text-xs text-phosphor sm:text-sm">
         ~/{profile.name.split(' ')[0].toLowerCase()}
         <span className="cursor-blink">_</span>
       </a>
-      <div className="flex items-center gap-4 sm:gap-6">
-        <div className="hidden gap-6 font-mono text-xs text-fog sm:flex">
+      <div className="flex min-w-0 items-center gap-3 sm:gap-6">
+        <div className="flex gap-3 font-mono text-[11px] text-fog sm:gap-6 sm:text-xs">
           {LINKS.map((link) => (
             <a key={link.href} href={link.href} className="transition-colors hover:text-phosphor">
-              ./{link.label}
+              <span className="hidden sm:inline">./</span>
+              {link.label}
             </a>
           ))}
         </div>
         <a
           href="#terminal"
-          className="rounded-md border border-phosphor-dim/60 px-3 py-1.5 font-mono text-xs text-phosphor transition-colors hover:bg-phosphor hover:text-ink"
+          className="shrink-0 rounded-md border border-phosphor-dim/60 px-2.5 py-1.5 font-mono text-xs text-phosphor transition-colors hover:bg-phosphor hover:text-ink sm:px-3"
         >
-          &gt;_ ask my AI
+          <span className="sm:hidden">&gt;_ AI</span>
+          <span className="hidden sm:inline">&gt;_ ask my AI</span>
         </a>
       </div>
     </nav>

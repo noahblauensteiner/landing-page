@@ -4,7 +4,7 @@ import { profile } from '../data/profile';
 import Reveal from './Reveal';
 
 const Projects: React.FC = () => (
-  <section id="work" className="border-y border-edge/60 bg-panel/40">
+  <section id="work" className="scroll-mt-16 border-y border-edge/60 bg-panel/40">
     <div className="mx-auto max-w-6xl px-4 py-24 sm:px-6">
       <Reveal>
         <p className="font-mono text-xs text-phosphor-dim">// reference projects</p>
