@@ -153,9 +153,7 @@ competing in beach volleyball, or out in Dutch nature.`,
       description:
         'A hands-on training for technical college students: how software engineering actually works in the job field, and how a ports & adapters architecture keeps real-world projects maintainable. Theory grounded in examples from real client work.',
       tags: ['Ports & adapters', 'Software engineering practice', 'Teaching'],
-      // TODO: paste the GitHub repo link with the workshop materials here —
-      // the "view materials" button shows up automatically once url is set.
-      url: undefined,
+      url: 'https://github.com/micstra/htl-workshop',
       cta: 'view materials',
     },
   ] as Workshop[],
