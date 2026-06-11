@@ -22,12 +22,14 @@ const Passions: React.FC = () => (
     <div className="mt-12 grid gap-5 sm:grid-cols-2">
       {profile.passions.map((passion, i) => (
         <Reveal key={passion.title} delay={i * 0.08}>
-          <div className="card-glow h-full rounded-xl border border-edge bg-panel p-6">
-            <div className="mb-4 inline-flex rounded-lg border border-phosphor-dim/40 bg-ink p-3 text-phosphor">
+          <div className="card-glow flex h-full items-start gap-4 rounded-xl border border-edge bg-panel p-5 sm:p-6">
+            <div className="inline-flex shrink-0 rounded-lg border border-phosphor-dim/40 bg-ink p-2.5 text-phosphor sm:p-3">
               {ICONS[passion.icon] ?? <Sparkles className="h-6 w-6" />}
             </div>
-            <h3 className="text-lg font-semibold">{passion.title}</h3>
-            <p className="mt-2 text-sm leading-relaxed text-fog">{passion.text}</p>
+            <div>
+              <h3 className="text-base font-semibold sm:text-lg">{passion.title}</h3>
+              <p className="mt-1.5 text-sm leading-relaxed text-fog">{passion.text}</p>
+            </div>
           </div>
         </Reveal>
       ))}

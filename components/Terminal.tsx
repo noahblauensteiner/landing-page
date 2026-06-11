@@ -224,15 +224,15 @@ const Terminal: React.FC = () => {
         {busy && <span className="cursor-blink text-phosphor">▋</span>}
       </div>
 
-      {/* Suggestions */}
-      <div className="flex gap-2 overflow-x-auto border-t border-edge px-4 py-2 sm:px-6">
+      {/* Suggestions — stacked on mobile so nothing needs to scroll sideways */}
+      <div className="flex flex-col gap-2 border-t border-edge px-4 py-2.5 sm:flex-row sm:px-6 sm:py-2">
         {SUGGESTIONS.map((s) => (
           <button
             key={s}
             type="button"
             onClick={() => submit(s)}
             disabled={busy}
-            className="shrink-0 rounded-full border border-edge px-3 py-1 font-mono text-[11px] text-fog transition-colors hover:border-phosphor-dim hover:text-phosphor disabled:opacity-40"
+            className="rounded-full border border-edge px-3 py-1.5 text-left font-mono text-[11px] text-fog transition-colors hover:border-phosphor-dim hover:text-phosphor disabled:opacity-40 sm:shrink-0 sm:py-1"
           >
             {s}
           </button>
