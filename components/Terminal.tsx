@@ -26,6 +26,7 @@ const HELP_TEXT = [
   'built-in commands:',
   '  about      who is Noah?',
   '  projects   reference projects',
+  '  workshops  workshops & knowledge sharing',
   '  skills     tech stack & practices',
   '  passions   what drives him',
   '  contact    how to reach out',
@@ -50,6 +51,10 @@ function commandOutput(command: string): string | null {
       return profile.projects
         .map((p) => `▸ ${p.name} (${p.period}) — ${p.role}\n  ${p.impact}`)
         .join('\n');
+    case 'workshops':
+      return profile.workshops
+        .map((w) => `▸ ${w.name} (${w.host})\n  ${w.description}${w.url ? `\n  ${w.url}` : ''}`)
+        .join('\n');
     case 'skills':
       return Object.entries(profile.skills)
         .map(([group, items]) => `${group}: ${items.join(', ')}`)
@@ -71,6 +76,7 @@ function commandOutput(command: string): string | null {
 /** Keyword fallback so the terminal stays useful when the AI endpoint is unavailable. */
 function offlineAnswer(question: string): string {
   const q = question.toLowerCase();
+  if (/(workshop|teach|training|kotlinconf|game|knowledge shar)/.test(q)) return commandOutput('workshops')!;
   if (/(project|work|built|reference|portfolio)/.test(q)) return commandOutput('projects')!;
   if (/(skill|stack|tech|language|tool|cloud)/.test(q)) return commandOutput('skills')!;
   if (/(passion|drive|motivat|love|interest|enjoy)/.test(q)) return commandOutput('passions')!;
