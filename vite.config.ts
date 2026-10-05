@@ -45,6 +45,25 @@ function chatApiDevPlugin(): Plugin {
   };
 }
 
+/**
+ * Serves /journey from journey.html on the dev server, matching the Netlify
+ * redirect in netlify.toml.
+ */
+function journeyRouteDevPlugin(): Plugin {
+  return {
+    name: 'journey-route-dev',
+    configureServer(server: ViteDevServer) {
+      server.middlewares.use((req, _res, next) => {
+        const [pathname, query] = (req.url ?? '').split('?');
+        if (pathname === '/journey' || pathname === '/journey/') {
+          req.url = `/journey.html${query ? `?${query}` : ''}`;
+        }
+        next();
+      });
+    },
+  };
+}
+
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, '.', '');
   // Make the key available to the dev API middleware only — it is never
@@ -53,10 +72,21 @@ export default defineConfig(({ mode }) => {
     process.env.ANTHROPIC_API_KEY = env.ANTHROPIC_API_KEY;
   }
   return {
-    plugins: [chatApiDevPlugin()],
+    plugins: [chatApiDevPlugin(), journeyRouteDevPlugin()],
     resolve: {
       alias: {
         '@': path.resolve('.'),
+      },
+    },
+    build: {
+      rollupOptions: {
+        input: {
+          main: path.resolve('index.html'),
+          journey: path.resolve('journey.html'),
+        },
+        output: {
+          manualChunks: (id) => (id.includes('node_modules') ? 'vendor' : undefined),
+        },
       },
     },
   };
