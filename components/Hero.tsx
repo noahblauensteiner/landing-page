@@ -38,7 +38,7 @@ const Hero: React.FC = () => {
   return (
     <section id="top" className="relative overflow-hidden">
       <div className="bg-grid absolute inset-0" aria-hidden="true" />
-      <div className="relative mx-auto flex min-h-[82vh] max-w-6xl flex-col justify-center px-4 pt-16 sm:px-6">
+      <div className="relative mx-auto flex min-h-[68vh] max-w-6xl flex-col justify-center px-4 pt-16 sm:min-h-[82vh] sm:px-6">
         {/* Negative vertical margins keep the row at text height, so the
             avatar floats on the free space to the right without pushing
             the heading down. */}
@@ -111,7 +111,7 @@ const Hero: React.FC = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.1, duration: 1 }}
-          className="pointer-events-none absolute bottom-8 left-1/2 -translate-x-1/2 font-mono text-[10px] uppercase tracking-[0.3em] text-fog/60"
+          className="pointer-events-none absolute bottom-8 left-1/2 hidden -translate-x-1/2 font-mono sm:block text-[10px] uppercase tracking-[0.3em] text-fog/60"
         >
           scroll ↓
         </motion.div>
