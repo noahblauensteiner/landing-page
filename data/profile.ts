@@ -31,6 +31,22 @@ export interface Workshop {
   cta?: string;
 }
 
+export type JourneyKind = 'work' | 'life' | 'learning';
+
+export interface JourneyStop {
+  id: string;
+  /** Big marker shown on the timeline: a year, or a word for undated stops. */
+  label: string;
+  kind: JourneyKind;
+  title: string;
+  place?: string;
+  period?: string;
+  text: string;
+  tags?: string[];
+  url?: string;
+  cta?: string;
+}
+
 export const profile = {
   name: 'Noah Blauensteiner',
   title: 'AI Enablement & Software Engineering Consultant',
@@ -157,6 +173,109 @@ competing in beach volleyball, or out in Dutch nature.`,
       cta: 'view materials',
     },
   ] as Workshop[],
+
+  // ── Journey (the sideways timeline on /journey), told in Noah's own voice ──
+  // Undated stops use a word as their label instead of inventing a year.
+  journey: [
+    {
+      id: 'j-vienna',
+      label: 'Vienna',
+      kind: 'life',
+      title: 'Where it all starts',
+      place: 'Vienna, Austria',
+      text: 'Born and raised in Vienna. This is where it starts — long before the clients, the code reviews and the move north.',
+    },
+    {
+      id: 'j-htl',
+      label: '2018',
+      kind: 'learning',
+      title: 'Higher Technical College — Department of IT',
+      place: 'St. Pölten, Austria',
+      period: 'Graduated June 2018',
+      text: 'Graduated from the IT department with high honors, and served as vice student representative along the way.',
+      tags: ['IT', 'High honors'],
+    },
+    {
+      id: 'j-schachermayer',
+      label: '2019',
+      kind: 'work',
+      title: 'Team Lead',
+      place: 'Schachermayer',
+      period: 'Apr 2019 – Sep 2022',
+      text: 'Led a mid-sized hybrid team through two successful project deliveries plus continuous incremental releases, and co-designed an architecture that let new joiners and interns ship features fast.',
+      tags: ['Kotlin', 'Vue', 'Spring', 'Elasticsearch'],
+    },
+    {
+      id: 'j-amsterdam',
+      label: '2022',
+      kind: 'life',
+      title: 'A bigger sandbox',
+      place: 'Vienna → Amsterdam',
+      text: 'Moved from Austria to Amsterdam, chasing new challenges and a bigger sandbox to play in. Picked up Dutch along the way — conversational by now.',
+      tags: ['German', 'English', 'Dutch'],
+    },
+    {
+      id: 'j-lead-dev',
+      label: '2022',
+      kind: 'work',
+      title: 'Lead Developer',
+      place: 'Kleinanzeigen & others',
+      period: 'Sep 2022 – Mar 2024',
+      text: 'Project-hopping to get architectures ready for growth: in one team I ironed out frontend rendering issues and left the know-how behind; in another I brought ports & adapters into the Spring backend.',
+      tags: ['React', 'Kotlin', 'Spring'],
+    },
+    {
+      id: 'j-sand',
+      label: 'Weekends',
+      kind: 'life',
+      title: 'On the sand',
+      place: 'Beach courts & Dutch nature',
+      text: 'Coaching and competing in beach volleyball, or out in Dutch nature with my girlfriend. The sand teaches the same things as engineering: communication, trust, fast feedback.',
+      tags: ['Beach volleyball', 'Coaching'],
+    },
+    {
+      id: 'j-justice',
+      label: '2024',
+      kind: 'work',
+      title: 'Technical Architect',
+      place: 'Austrian Chamber of Justice',
+      period: 'Mar 2024 – Mar 2025',
+      text: 'Architecture for the document management system used in Austrian courts by lawyers, judges and prosecutors — including a new intake system that lets other regions feed cases into the existing workflow, without bending the security standards.',
+      tags: ['Java', 'Angular', 'Security'],
+    },
+    {
+      id: 'j-workshop',
+      label: 'Giving back',
+      kind: 'learning',
+      title: 'Back in the classroom — as the trainer',
+      place: 'Technical college, Austria',
+      period: 'One-day workshop',
+      text: 'A one-day training for technical college students: how software engineering really works on the job, and why ports & adapters keeps real projects maintainable. Full circle, years after my own graduation.',
+      tags: ['Ports & adapters', 'Teaching'],
+      url: 'https://github.com/micstra/htl-workshop',
+      cta: 'workshop materials',
+    },
+    {
+      id: 'j-kotlinconf',
+      label: '2026',
+      kind: 'learning',
+      title: 'The KotlinConf game',
+      place: 'Xebia @ KotlinConf',
+      text: 'An interactive game showing how Xebia packages learning into fun, hands-on bits. Idea to conference-ready in one week — built entirely with AI, without writing the code myself.',
+      tags: ['Agent built', 'React', 'Agentic workflows'],
+      url: 'https://xebiakotlinconf.netlify.app/',
+      cta: 'play the game',
+    },
+    {
+      id: 'j-now',
+      label: 'Now',
+      kind: 'work',
+      title: 'AI Enablement Consultant',
+      place: 'Xebia · Amsterdam',
+      text: 'Bridging solid engineering foundations with modern AI: helping teams adopt agentic and generative AI tooling to build faster, smarter and safely. Currently deep-diving into scalable Kotlin architecture and the Anthropic toolchain.',
+      tags: ['Anthropic Academy', 'MCP', 'Agents'],
+    },
+  ] as JourneyStop[],
 
   skills: {
     'AI Competency': [

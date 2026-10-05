@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Noah Blauensteiner — The Journey</title>
+    <meta
+      name="description"
+      content="A sideways timeline through Noah Blauensteiner's professional and personal journey — from Vienna to Amsterdam, from clean code to agentic AI."
+    />
+    <meta property="og:title" content="Noah Blauensteiner — The Journey" />
+    <meta
+      property="og:description"
+      content="Scroll sideways through the roles, the moves, and the things that happened off the keyboard."
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%2300ff9c' font-family='monospace'>&gt;_</text></svg>"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              ink: '#0a0f0d',
+              panel: '#0e1512',
+              edge: '#1d2b24',
+              phosphor: '#00ff9c',
+              'phosphor-dim': '#0fae71',
+              amber: '#ffb454',
+              lilac: '#b9a6ff',
+              fog: '#9fb8ac',
+              paper: '#e8f5ee',
+            },
+            fontFamily: {
+              display: ['"Space Grotesk"', 'sans-serif'],
+              mono: ['"JetBrains Mono"', 'monospace'],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-ink text-paper font-display antialiased">
+    <div id="root"></div>
+    <script type="module" src="/journey.tsx"></script>
+  </body>
+</html>

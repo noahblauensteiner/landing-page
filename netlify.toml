@@ -6,4 +6,10 @@
   NODE_VERSION = "20"
 
 # Functions live in netlify/functions (the default); chat.ts registers itself
-# at /api/chat via its exported config.path, so no redirects are needed.
+# at /api/chat via its exported config.path, so it needs no redirect.
+
+# The timeline page lives at /journey.
+[[redirects]]
+  from = "/journey"
+  to = "/journey.html"
+  status = 200
