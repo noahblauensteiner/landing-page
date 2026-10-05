@@ -3,7 +3,7 @@ import Reveal from './Reveal';
 import Terminal from './Terminal';
 
 const AskSection: React.FC = () => (
-  <section id="terminal" className="mx-auto max-w-4xl px-4 py-24 sm:px-6">
+  <section id="terminal" className="mx-auto max-w-4xl scroll-mt-16 px-4 py-24 sm:px-6">
     <Reveal>
       <p className="font-mono text-xs text-phosphor-dim">// the interesting part</p>
       <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">

@@ -12,7 +12,7 @@ const ICONS: Record<string, React.ReactNode> = {
 };
 
 const Passions: React.FC = () => (
-  <section id="passions" className="mx-auto max-w-6xl px-4 py-24 sm:px-6">
+  <section id="passions" className="mx-auto max-w-6xl scroll-mt-16 px-4 py-24 sm:px-6">
     <Reveal>
       <p className="font-mono text-xs text-phosphor-dim">// what drives me</p>
       <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
